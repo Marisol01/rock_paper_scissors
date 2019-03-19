@@ -41,6 +41,9 @@ function lose(userChoice, computerChoice) {
 
 function tie(userChoice, computerChoice) {
   tieScore++;
+  userScore_span.innerHTML = userScore;
+  computerScore_span.innerHTML = computerScore;
+  tieScore_span.innerHTML = tieScore
   results_p.innerHTML = "You chose " + convertToWord(userChoice) + ". Computer chose " + convertToWord(computerChoice) + ". It's a tie.";
 }
 
@@ -81,4 +84,5 @@ function main() {
 })
 }
 
-main();
+
+main()
