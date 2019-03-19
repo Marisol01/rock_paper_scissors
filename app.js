@@ -1,4 +1,4 @@
-// caching DOM
+
 let userScore = 0;
 let computerScore = 0;
 const userScore_span = document.getElementById("user-score");
@@ -19,8 +19,10 @@ function getComputerChoice() {
 function convertToWord(letter) {
   if (letter === "r") return "Rock";
   if (letter === "p") return "Paper";
-  return "scissors";
+  else return "Scissors";
 }
+
+
 
 function win(userChoice, computerChoice) {
   userScore++;
@@ -30,12 +32,15 @@ function win(userChoice, computerChoice) {
 ///////////
 }
 
-function lose() {
-  
+function lose(userChoice, computerChoice) {
+  computerScore++;
+  userScore_span.innerHTML = userScore;
+  computerScore_span.innerHTML = computerScore;
+  results_p.innerHTML = convertToWord(userChoice) + " loses to " + convertToWord(computerChoice) + ". You Lose...";
 }
 
-function tie() {
-
+function tie(userChoice, computerChoice) {
+  results_p.innerHTML = convertToWord(userChoice) + " is equal to " + convertToWord(computerChoice) + ". TIE!";
 }
 
 function game(userChoice) {
