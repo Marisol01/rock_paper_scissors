@@ -1,4 +1,4 @@
-// caching DOM
+
 let userScore = 0;
 let computerScore = 0;
 let tieScore = 0;
@@ -23,6 +23,8 @@ function convertToWord(letter) {
   if (letter === "p") return "paper";
   else return "scissors";
 }
+
+
 
 function win(userChoice, computerChoice) {
   userScore++;
