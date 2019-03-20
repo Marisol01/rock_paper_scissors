@@ -24,7 +24,7 @@ header > h1 {
   border: 3px solid white;
   border-radius: 4px;
   text-align: center;
-  width: 200px;
+  width: 350px;
   color: white;
   font-size: 40px;
   padding: 15px 20px;
@@ -50,6 +50,12 @@ header > h1 {
   position: absolute;
   top: 30px;
   right: -30px;
+}
+
+#tie-label {
+  position: absolute;
+  top: 65px;
+  right: 150px;
 }
 
 .results {

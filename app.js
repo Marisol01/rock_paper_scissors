@@ -1,8 +1,10 @@
 
 let userScore = 0;
 let computerScore = 0;
+let tieScore = 0;
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
+const tieScore_span = document.getElementById("tie-score")
 const scoreBoard_div = document.querySelector(".score-board");
 const results_p = document.querySelector(".results > p");
 const rock_div = document.getElementById("r");
@@ -17,9 +19,9 @@ function getComputerChoice() {
 }
 
 function convertToWord(letter) {
-  if (letter === "r") return "Rock";
-  if (letter === "p") return "Paper";
-  else return "Scissors";
+  if (letter === "r") return "rock";
+  if (letter === "p") return "paper";
+  else return "scissors";
 }
 
 
@@ -28,7 +30,7 @@ function win(userChoice, computerChoice) {
   userScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
- results_p.innerHTML = convertToWord(userChoice) + " beats " + convertToWord(computerChoice) + ". You Win!!!";
+  results_p.innerHTML = "You chose " + convertToWord(userChoice) + ".  Computer chose " + convertToWord(computerChoice) + ". You win!!!";
 ///////////
 }
 
@@ -36,11 +38,15 @@ function lose(userChoice, computerChoice) {
   computerScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
-  results_p.innerHTML = convertToWord(userChoice) + " loses to " + convertToWord(computerChoice) + ". You Lose...";
+  results_p.innerHTML = "You chose " + convertToWord(userChoice) + ". Computer chose " + convertToWord(computerChoice) + ". You lose...";
 }
 
 function tie(userChoice, computerChoice) {
-  results_p.innerHTML = convertToWord(userChoice) + " is equal to " + convertToWord(computerChoice) + ". TIE!";
+  tieScore++;
+  userScore_span.innerHTML = userScore;
+  computerScore_span.innerHTML = computerScore;
+  tieScore_span.innerHTML = tieScore
+  results_p.innerHTML = "You chose " + convertToWord(userChoice) + ". Computer chose " + convertToWord(computerChoice) + ". It's a tie.";
 }
 
 function game(userChoice) {
@@ -80,4 +86,5 @@ function main() {
 })
 }
 
-main();
+
+main()
